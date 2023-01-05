@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 
 import { Card, CardContent, CardActions, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -27,17 +27,22 @@ const Archive = ({ archive }) => {
     setNotes((prevArr) => [archive, ...prevArr]);
   };
 
-  const deleteNote = (archive) => {
-    const updatedNotes = archiveNotes.filter((data) => data.id !== archive.id);
-    setAcrchiveNotes(updatedNotes);
-    setDeleteNotes((prevArr) => [archive, ...prevArr]);
-  };
+  const deleteNote = useCallback(
+    (archive) => {
+      const updatedNotes = archiveNotes.filter(
+        (data) => data.id !== archive.id
+      );
+      setAcrchiveNotes(updatedNotes);
+      setDeleteNotes((prevArr) => [archive, ...prevArr]);
+    },
+    [setAcrchiveNotes, setDeleteNotes, archiveNotes]
+  );
   function unArchiveHandler() {
     unArchiveNote(archive);
   }
-  function deleteNoteHandler() {
+  const deleteNoteHandler = useCallback(() => {
     deleteNote(archive);
-  }
+  }, [archive, deleteNote]);
   return (
     <StyledCard>
       <CardContent>
