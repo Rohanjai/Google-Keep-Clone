@@ -7,6 +7,7 @@ import { DataContext } from "../../context/DataProvider";
 
 //components
 import DeleteNote from "./DeleteNote";
+import EmptyDeleted from "./EmptyDeleted";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
@@ -19,13 +20,17 @@ const DeleteNotes = () => {
     <Box sx={{ display: "flex", width: "100%" }}>
       <Box sx={{ p: 3, width: "100%" }}>
         <DrawerHeader />
-        <Grid container>
-          {deleteNotes.map((deleteNote) => (
-            <Grid item key={deleteNote.uuid}>
-              <DeleteNote deleteNote={deleteNote} />
-            </Grid>
-          ))}
-        </Grid>
+        {deleteNotes.length > 0 ? (
+          <Grid container>
+            {deleteNotes.map((deleteNote) => (
+              <Grid item key={deleteNote.uuid}>
+                <DeleteNote deleteNote={deleteNote} />
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <EmptyDeleted />
+        )}
       </Box>
     </Box>
   );
