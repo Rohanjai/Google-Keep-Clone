@@ -18,12 +18,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const Notes = () => {
   const { notes, setNotes } = useContext(DataContext);
 
-  const onDragEnd = (result) => {
+  function onDragEnd(result) {
     if (!result.destination) return;
 
     const items = reorder(notes, result.source.index, result.destination.index);
     setNotes(items);
-  };
+  }
 
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
