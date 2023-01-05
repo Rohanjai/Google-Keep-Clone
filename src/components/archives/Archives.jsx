@@ -1,37 +1,34 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 
-import { Box, Grid } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, Grid } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-import { DataContext } from '../../context/DataProvider';
+import { DataContext } from "../../context/DataProvider";
 
 //components
-import Archive from './Archive';
+import Archive from "./Archive";
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-    ...theme.mixins.toolbar,
+const DrawerHeader = styled("div")(({ theme }) => ({
+  ...theme.mixins.toolbar,
 }));
 
 const Archives = () => {
+  const { archiveNotes } = useContext(DataContext);
 
-    const { archiveNotes } = useContext(DataContext);
-
-    return (
-        <Box sx={{ display: 'flex', width: '100%' }}>
-            <Box sx={{ p: 3, width: '100%' }}>
-                <DrawerHeader />
-                <Grid container>
-                    {
-                        archiveNotes.map(archive => (
-                            <Grid item>
-                                <Archive archive={archive} />
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-            </Box>
-        </Box>
-    )
-}
+  return (
+    <Box sx={{ display: "flex", width: "100%" }}>
+      <Box sx={{ p: 3, width: "100%" }}>
+        <DrawerHeader />
+        <Grid container>
+          {archiveNotes.map((archive) => (
+            <Grid item key={archive.uuid}>
+              <Archive archive={archive} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Box>
+  );
+};
 
 export default Archives;
