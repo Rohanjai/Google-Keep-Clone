@@ -56,9 +56,9 @@ function SwipeDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
-  const handleDrawer = () => {
+  function handleDrawer() {
     setOpen((prevState) => !prevState);
-  };
+  }
 
   return (
     <Box sx={{ display: "flex" }}>

@@ -21,7 +21,7 @@ const DeleteNotes = () => {
         <DrawerHeader />
         <Grid container>
           {deleteNotes.map((deleteNote) => (
-            <Grid item>
+            <Grid item key={deleteNote.uuid}>
               <DeleteNote deleteNote={deleteNote} />
             </Grid>
           ))}
