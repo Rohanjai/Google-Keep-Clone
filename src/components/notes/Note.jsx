@@ -17,7 +17,7 @@ const StyledCard = styled(Card)`
   box-shadow: none;
 `;
 
-const Note = ({ note }) => {
+function Note({ note }) {
   const { notes, setNotes, setAcrchiveNotes, setDeleteNotes } =
     useContext(DataContext);
 
@@ -55,6 +55,6 @@ const Note = ({ note }) => {
       </CardActions>
     </StyledCard>
   );
-};
+}
 
 export default Note;
