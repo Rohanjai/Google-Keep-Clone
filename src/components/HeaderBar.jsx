@@ -17,6 +17,9 @@ const Heading = styled(Typography)`
 `;
 
 const HeaderBar = ({ open, handleDrawer }) => {
+  const DrawerHandler = () => {
+    handleDrawer();
+  };
   const logo =
     "https://seeklogo.com/images/G/google-keep-logo-0BC92EBBBD-seeklogo.com.png";
 
@@ -24,7 +27,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
     <Header open={open}>
       <Toolbar>
         <IconButton
-          onClick={() => handleDrawer()}
+          onClick={DrawerHandler}
           sx={{ marginRight: "20px" }}
           edge="start"
         >
