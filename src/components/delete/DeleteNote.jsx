@@ -33,6 +33,12 @@ const DeleteNote = ({ deleteNote }) => {
     );
     setDeleteNotes(updatedNotes);
   }
+  function removeNoteHandler() {
+    removeNote(deleteNote);
+  }
+  function restoreNoteHandler() {
+    restoreNote(deleteNote);
+  }
 
   return (
     <StyledCard>
@@ -44,9 +50,9 @@ const DeleteNote = ({ deleteNote }) => {
         <Delete
           fontSize="small"
           style={{ marginLeft: "auto" }}
-          onClick={() => removeNote(deleteNote)}
+          onClick={removeNoteHandler}
         />
-        <Restore fontSize="small" onClick={() => restoreNote(deleteNote)} />
+        <Restore fontSize="small" onClick={restoreNoteHandler} />
       </CardActions>
     </StyledCard>
   );
