@@ -64,7 +64,7 @@ const Form = () => {
             variant="standard"
             InputProps={{ disableUnderline: true }}
             style={{ marginBottom: 10 }}
-            onChange={(e) => onTextChange(e)}
+            onChange={onTextChange}
             name="heading"
             value={addNote.heading}
           />
@@ -76,7 +76,7 @@ const Form = () => {
           variant="standard"
           InputProps={{ disableUnderline: true }}
           onClick={onTextAreaClick}
-          onChange={(e) => onTextChange(e)}
+          onChange={onTextChange}
           name="text"
           value={addNote.text}
         />
