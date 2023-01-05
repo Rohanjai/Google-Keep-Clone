@@ -17,23 +17,22 @@ const StyledCard = styled(Card)`
 `;
 
 const DeleteNote = ({ deleteNote }) => {
-  const { deleteNotes, setNotes, setAcrchiveNotes, setDeleteNotes } =
-    useContext(DataContext);
+  const { deleteNotes, setNotes, setDeleteNotes } = useContext(DataContext);
 
-  const restoreNote = (deleteNote) => {
+  function restoreNote(deleteNote) {
     const updatedNotes = deleteNotes.filter(
       (data) => data.id !== deleteNote.id
     );
     setDeleteNotes(updatedNotes);
     setNotes((prevArr) => [deleteNote, ...prevArr]);
-  };
+  }
 
-  const removeNote = (deleteNote) => {
+  function removeNote(deleteNote) {
     const updatedNotes = deleteNotes.filter(
       (data) => data.id !== deleteNote.id
     );
     setDeleteNotes(updatedNotes);
-  };
+  }
 
   return (
     <StyledCard>
