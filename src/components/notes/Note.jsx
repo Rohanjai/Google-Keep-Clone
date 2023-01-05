@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 
 import { Card, CardContent, CardActions, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -21,23 +21,31 @@ function Note({ note }) {
   const { notes, setNotes, setAcrchiveNotes, setDeleteNotes } =
     useContext(DataContext);
 
-  function archiveNote(note) {
-    const updatedNotes = notes.filter((data) => data.id !== note.id);
-    setNotes(updatedNotes);
-    setAcrchiveNotes((prevArr) => [note, ...prevArr]);
-  }
+  const archiveNote = useCallback(
+    (note) => {
+      const updatedNotes = notes.filter((data) => data.id !== note.id);
+      setNotes(updatedNotes);
+      setAcrchiveNotes((prevArr) => [note, ...prevArr]);
+    },
+    [setNotes, setAcrchiveNotes, notes]
+  );
 
-  function deleteNote(note) {
-    const updatedNotes = notes.filter((data) => data.id !== note.id);
-    setNotes(updatedNotes);
-    setDeleteNotes((prevArr) => [note, ...prevArr]);
-  }
-  function archiveHandler() {
+  const deleteNote = useCallback(
+    (note) => {
+      const updatedNotes = notes.filter((data) => data.id !== note.id);
+      setNotes(updatedNotes);
+      setDeleteNotes((prevArr) => [note, ...prevArr]);
+    },
+    [notes, setNotes, setDeleteNotes]
+  );
+
+  const archiveHandler = useCallback(() => {
     archiveNote(note);
-  }
-  function deleteHandler() {
+  }, [archiveNote, note]);
+
+  const deleteHandler = useCallback(() => {
     deleteNote(note);
-  }
+  }, [deleteNote, note]);
 
   return (
     <StyledCard>
