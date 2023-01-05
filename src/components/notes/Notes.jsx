@@ -22,8 +22,8 @@ const Notes = () => {
         <Form />
         {notes.length > 0 ? (
           <Grid container style={{ marginTop: 16 }}>
-            {notes.map((note, index) => (
-              <Grid>
+            {notes.map((note) => (
+              <Grid key={note.uuid}>
                 <Note note={note} />
               </Grid>
             ))}
