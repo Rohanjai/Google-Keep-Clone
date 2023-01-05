@@ -21,11 +21,16 @@ const Archive = ({ archive }) => {
   const { archiveNotes, setNotes, setAcrchiveNotes, setDeleteNotes } =
     useContext(DataContext);
 
-  const unArchiveNote = (archive) => {
-    const updatedNotes = archiveNotes.filter((data) => data.id !== archive.id);
-    setAcrchiveNotes(updatedNotes);
-    setNotes((prevArr) => [archive, ...prevArr]);
-  };
+  const unArchiveNote = useCallback(
+    (archive) => {
+      const updatedNotes = archiveNotes.filter(
+        (data) => data.id !== archive.id
+      );
+      setAcrchiveNotes(updatedNotes);
+      setNotes((prevArr) => [archive, ...prevArr]);
+    },
+    [setAcrchiveNotes, setNotes, archiveNotes]
+  );
 
   const deleteNote = useCallback(
     (archive) => {
@@ -37,9 +42,9 @@ const Archive = ({ archive }) => {
     },
     [setAcrchiveNotes, setDeleteNotes, archiveNotes]
   );
-  function unArchiveHandler() {
+  const unArchiveHandler = useCallback(() => {
     unArchiveNote(archive);
-  }
+  }, [archive, unArchiveNote]);
   const deleteNoteHandler = useCallback(() => {
     deleteNote(archive);
   }, [archive, deleteNote]);
