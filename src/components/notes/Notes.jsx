@@ -5,8 +5,6 @@ import { styled } from "@mui/material/styles";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import { DataContext } from "../../context/DataProvider";
-import { reorder } from "../../utils/common-utils";
-
 import Form from "./Form";
 import Note from "./Note";
 import EmptyNotes from "./EmptyNotes";
@@ -16,14 +14,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const Notes = () => {
-  const { notes, setNotes } = useContext(DataContext);
-
-  function onDragEnd(result) {
-    if (!result.destination) return;
-
-    const items = reorder(notes, result.source.index, result.destination.index);
-    setNotes(items);
-  }
+  const { notes } = useContext(DataContext);
 
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
@@ -31,7 +22,7 @@ const Notes = () => {
         <DrawerHeader />
         <Form />
         {notes.length > 0 ? (
-          <DragDropContext onDragEnd={onDragEnd}>
+          <DragDropContext>
             <Droppable droppableId="droppable">
               {(provided, snapshot) => (
                 <Grid
