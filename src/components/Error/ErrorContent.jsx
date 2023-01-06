@@ -1,7 +1,7 @@
-import { LightbulbOutlined as Lightbulb } from "@mui/icons-material";
+import ErrorIcon from "@mui/icons-material/Error";
 import { Typography, Box, styled } from "@mui/material";
 
-const Light = styled(Lightbulb)`
+const Error = styled(ErrorIcon)`
   font-size: 120px;
   color: #f5f5f5;
 `;
@@ -18,13 +18,13 @@ const Container = styled(Box)`
   margin-top: 20vh;
 `;
 
-const EmptyNotes = () => {
+const ErrorContent = () => {
   return (
     <Container>
-      <Light />
-      <Text>Notes you add appear here</Text>
+      <Error />
+      <Text>404 PAGE NOT FOUND</Text>
     </Container>
   );
 };
 
-export default EmptyNotes;
+export default ErrorContent;

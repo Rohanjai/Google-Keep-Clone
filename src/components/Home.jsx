@@ -5,6 +5,7 @@ import SwipeDrawer from "./SwipeDrawer";
 import Notes from "./notes/Notes";
 import Archives from "./archives/Archives";
 import DeleteNotes from "./delete/DeleteNotes";
+import ErrorPage from "./Error/ErrorPage";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
           <Route path="/" element={<Notes />} />
           <Route path="/archive" element={<Archives />} />
           <Route path="/delete" element={<DeleteNotes />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </Box>
