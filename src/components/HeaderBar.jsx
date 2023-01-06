@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-
+import { Button } from "@mui/material";
 const Header = styled(AppBar)`
   z-index: 1201;
   background: #fff;
@@ -35,6 +35,21 @@ const HeaderBar = ({ open, handleDrawer }) => {
         </Link>
 
         <Heading>Keep</Heading>
+        <Link to="/signup">
+          <Button
+            variant="elevated"
+            color="yellow"
+            href="#outlined-buttons"
+            style={{
+              float: "right",
+              marginLeft: 1200,
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            Sign UP
+          </Button>
+        </Link>
       </Toolbar>
     </Header>
   );

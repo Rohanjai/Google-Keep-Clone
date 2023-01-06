@@ -6,6 +6,8 @@ import Notes from "./notes/Notes";
 import Archives from "./archives/Archives";
 import DeleteNotes from "./delete/DeleteNotes";
 import ErrorPage from "./Error/ErrorPage";
+import SignupPage from "./Signup/SignupPage";
+import Login from "./Login/Login";
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
           <Route path="/" element={<Notes />} />
           <Route path="/archive" element={<Archives />} />
           <Route path="/delete" element={<DeleteNotes />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
