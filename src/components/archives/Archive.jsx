@@ -6,7 +6,6 @@ import {
   UnarchiveOutlined as Unarchive,
   DeleteOutlineOutlined as Delete,
 } from "@mui/icons-material";
-
 import { DataContext } from "../../context/DataProvider";
 
 const StyledCard = styled(Card)`

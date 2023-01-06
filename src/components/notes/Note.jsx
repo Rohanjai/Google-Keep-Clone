@@ -6,7 +6,8 @@ import {
   ArchiveOutlined as Archive,
   DeleteOutlineOutlined as Delete,
 } from "@mui/icons-material";
-
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AddAlertIcon from "@mui/icons-material/AddAlert";
 import { DataContext } from "../../context/DataProvider";
 
 const StyledCard = styled(Card)`
@@ -54,6 +55,8 @@ function Note({ note }) {
         <Typography>{note.text}</Typography>
       </CardContent>
       <CardActions>
+        <MoreVertIcon fontSize="small" />
+        <AddAlertIcon fontSize="small" />
         <Archive
           fontSize="small"
           style={{ marginLeft: "auto" }}
