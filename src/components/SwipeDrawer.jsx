@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 
-//components
 import HeaderBar from "./HeaderBar";
 import NavList from "./NavList";
 import { useTheme } from "@emotion/react";

@@ -5,7 +5,6 @@ import { styled } from "@mui/material/styles";
 
 import { DataContext } from "../../context/DataProvider";
 
-//components
 import Archive from "./Archive";
 import EmptyArchive from "./EmptyArchive";
 const DrawerHeader = styled("div")(({ theme }) => ({

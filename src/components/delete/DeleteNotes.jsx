@@ -5,7 +5,6 @@ import { styled } from "@mui/material/styles";
 
 import { DataContext } from "../../context/DataProvider";
 
-//components
 import DeleteNote from "./DeleteNote";
 import EmptyDeleted from "./EmptyDeleted";
 
