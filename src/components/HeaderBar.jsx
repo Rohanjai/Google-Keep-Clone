@@ -35,21 +35,25 @@ const HeaderBar = ({ open, handleDrawer }) => {
         </Link>
 
         <Heading>Keep</Heading>
-        <Link to="/signup">
-          <Button
-            variant="elevated"
-            color="yellow"
-            href="#outlined-buttons"
-            style={{
-              float: "right",
-              marginLeft: 1200,
-              alignItems: "center",
-              color: "black",
-            }}
+
+        <Button
+          variant="elevated"
+          color="yellow"
+          href="#outlined-buttons"
+          style={{
+            float: "right",
+            marginLeft: 1200,
+            alignItems: "center",
+            color: "black",
+          }}
+        >
+          <Link
+            to="/signup"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             Sign UP
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </Toolbar>
     </Header>
   );

@@ -13,11 +13,35 @@ const Home = () => {
   return (
     <Box style={{ display: "flex", width: "100%" }}>
       <Router>
-        <SwipeDrawer />
+        {/* <SwipeDrawer /> */}
         <Routes>
-          <Route path="/" element={<Notes />} />
-          <Route path="/archive" element={<Archives />} />
-          <Route path="/delete" element={<DeleteNotes />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SwipeDrawer />
+                <Notes />
+              </>
+            }
+          />
+          <Route
+            path="/archive"
+            element={
+              <>
+                <SwipeDrawer />
+                <Archives />
+              </>
+            }
+          />
+          <Route
+            path="/delete"
+            element={
+              <>
+                <SwipeDrawer />
+                <DeleteNotes />
+              </>
+            }
+          />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
