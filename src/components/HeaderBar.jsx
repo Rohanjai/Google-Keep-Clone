@@ -41,7 +41,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
         <IconButton
           aria-label="Example"
           style={{
-            marginLeft: 1200,
+            marginLeft: 1230,
             display: "block",
             float: "right",
             alignItems: "center",
