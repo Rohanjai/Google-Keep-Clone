@@ -101,8 +101,16 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="/login">
+                <Link
+                  to="/login"
+                  style={{ textDecoration: "none", paddingRight: 30 }}
+                >
                   <Button>Already have an account? Sign in</Button>
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Button>Home</Button>
                 </Link>
               </Grid>
             </Grid>

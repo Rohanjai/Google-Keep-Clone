@@ -2,7 +2,9 @@ import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 const Header = styled(AppBar)`
   z-index: 1201;
   background: #fff;
@@ -11,7 +13,7 @@ const Header = styled(AppBar)`
 `;
 
 const Heading = styled(Typography)`
-  color: #5f6368;
+  color: grey;
   font-size: 24px;
   margin-left: 25px;
 `;
@@ -21,7 +23,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
     "https://seeklogo.com/images/G/google-keep-logo-0BC92EBBBD-seeklogo.com.png";
 
   return (
-    <Header open={open}>
+    <Header open={open} className="header">
       <Toolbar>
         <IconButton
           onClick={handleDrawer}
@@ -36,24 +38,39 @@ const HeaderBar = ({ open, handleDrawer }) => {
 
         <Heading>Keep</Heading>
 
-        <Button
-          variant="elevated"
-          color="yellow"
-          href="#outlined-buttons"
+        <IconButton
+          aria-label="Example"
           style={{
-            float: "right",
             marginLeft: 1200,
+            display: "block",
+            float: "right",
             alignItems: "center",
-            color: "black",
+            paddingTop: 13,
+          }}
+        >
+          <Link
+            to="/login"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <AccountCircleIcon />
+          </Link>
+        </IconButton>
+        <IconButton
+          aria-label="Example"
+          style={{
+            display: "block",
+            float: "right",
+            alignItems: "center",
+            paddingTop: 13,
           }}
         >
           <Link
             to="/signup"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            Sign UP
+            <PersonAddIcon />
           </Link>
-        </Button>
+        </IconButton>
       </Toolbar>
     </Header>
   );

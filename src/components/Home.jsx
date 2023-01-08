@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <Box style={{ display: "flex", width: "100%" }}>
       <Router>
-        {/* <SwipeDrawer /> */}
         <Routes>
           <Route
             path="/"

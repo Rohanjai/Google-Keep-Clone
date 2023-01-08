@@ -83,13 +83,21 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: "none" }}>
                   <Button>Forgot password?</Button>
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="/signup">
+                <Link to="/signup" style={{ textDecoration: "none" }}>
                   <Button>Don't have an account? Sign Up</Button>
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link
+                  to="/signup"
+                  style={{ textDecoration: "none", paddingLeft: 175 }}
+                >
+                  <Button>Home</Button>
                 </Link>
               </Grid>
             </Grid>
