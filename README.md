@@ -1,4 +1,4 @@
-# Google Keep CLone
+# Google Keep Clone
 
 This is a Clone application of Google Keep which is built using ReactJs and MaterialUI.
 
