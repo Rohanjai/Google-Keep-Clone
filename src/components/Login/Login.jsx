@@ -13,7 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-export default function Login() {
+function Login() {
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -81,3 +81,5 @@ export default function Login() {
     </Container>
   );
 }
+
+export default Login;

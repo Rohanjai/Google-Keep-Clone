@@ -11,7 +11,7 @@ import {
 } from "@mui/material/";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-export default function SignUp() {
+function SignUp() {
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -83,3 +83,5 @@ export default function SignUp() {
     </Container>
   );
 }
+
+export default SignUp;
