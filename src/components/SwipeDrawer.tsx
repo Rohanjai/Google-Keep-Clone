@@ -1,3 +1,4 @@
+//@ts-nocheck - Fix this by adding the correct type to Drawer Function
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -6,9 +7,8 @@ import MuiDrawer from "@mui/material/Drawer";
 import HeaderBar from "./HeaderBar";
 import NavList from "./NavList";
 import { useTheme } from "@emotion/react";
-
 const drawerWidth = 240;
-
+//@ts-expect-error - Fix this by adding the correct type
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -17,7 +17,7 @@ const openedMixin = (theme) => ({
   }),
   overflowX: "hidden",
 });
-
+//@ts-expect-error - Fix this by adding the correct type
 const closedMixin = (theme) => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
