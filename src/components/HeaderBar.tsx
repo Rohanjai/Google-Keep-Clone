@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Theme } from "@emotion/react";
 
 const Header = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -22,6 +23,7 @@ const Heading = styled(Typography)`
 type HeaderBarProps = {
   open: boolean;
   handleDrawer: () => void;
+  theme: Theme;
 };
 const HeaderBar = ({ open, handleDrawer }: HeaderBarProps) => {
   const logo =
